@@ -1,26 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import NavBar from "./NavBar";
-import Map from "./Map";
-import WishList from "./WishList";
-import Home from "./Home";
+import AddToMovieForm from "./AddToMovieForm";
+import TravelList from "./TravelList";
+import MovieList from "./MovieList";
 import "./index.css";
 
 function App() {
+
+    const [movies, setMovies] = useState([]);
+    const [travel, setTravel] = useState ([]);
+
+    useEffect (() => {
+        fetch('http://localhost:3000/movies')
+        .then(resp => resp.json())
+        .then(movieData => {
+            console.log(movieData);
+            setMovies(movieData);
+            
+        })
+    }, []);
+
+    function handleClickMovie(clickedMovie){
+        console.log(clickedMovie)
+        if (!travel.includes(clickedMovie)) {
+        setTravel([...travel, clickedMovie]);
+        }
+    }
+
     
   return (
       <div className="App">
           <NavBar />
           <Switch>
-              <Route path="/map">
-                  <Map />
+              <Route path="/addtomovieform">
+                  <AddToMovieForm />
               </Route>
-              <Route path="/wishlist">
-                  <WishList />
+              <Route path="/travellist">
+                  <TravelList 
+                    travel={travel}
+                  />
               </Route>
               <Route exact path="/">
-                  <Home />
+                  <MovieList 
+                    movies={movies}
+                    handleClickMovie={handleClickMovie}
+                  />
               </Route>
           </Switch>
       </div>
