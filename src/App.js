@@ -28,13 +28,19 @@ function App() {
         }
     }
 
-    
+    function handleAddMovie (newMovie) {
+        setMovies([...movies, newMovie])
+    }
+
+
+
+
   return (
       <div className="App">
           <NavBar />
           <Switch>
               <Route path="/addamovie">
-                  <AddAMovie />
+                  <AddAMovie movies={movies} setMovies={setMovies} onAddMovie={handleAddMovie} />
               </Route>
               <Route path="/travellist">
                   <TravelList 
