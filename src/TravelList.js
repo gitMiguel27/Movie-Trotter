@@ -16,7 +16,7 @@ function TravelList({travel}) {
     return (
         <div>
             <h1>Hello From Travel List</h1>
-            <div className="travel-cards">
+            <div className="travel-container">
                 {showMovies}
             </div>
         </div>

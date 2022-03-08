@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import AddToMovieForm from "./AddToMovieForm";
+import AddAMovie from "./AddAMovie";
 import TravelList from "./TravelList";
 import MovieList from "./MovieList";
 import "./index.css";
@@ -33,8 +33,8 @@ function App() {
       <div className="App">
           <NavBar />
           <Switch>
-              <Route path="/addtomovieform">
-                  <AddToMovieForm />
+              <Route path="/addamovie">
+                  <AddAMovie />
               </Route>
               <Route path="/travellist">
                   <TravelList 

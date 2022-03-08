@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <nav className="navbar">
             <NavLink exact to="/">Movie List</NavLink>
-            <NavLink to="/AddToMovieForm">Add To Movie Form</NavLink>
+            <NavLink to="/AddAMovie">Add a Movie</NavLink>
             <NavLink to="/TravelList">Travel List</NavLink>
         </nav>
     );

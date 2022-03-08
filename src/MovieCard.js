@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function MovieCard ({movie, handleClickMovie}) {
+    // const [className, setClassName] = useState(false);
 
     function clickMovie(){
-        handleClickMovie(movie)
+        handleClickMovie(movie);
     }
 
     return (
