@@ -1,16 +1,18 @@
 import React from "react";
 import MovieCard from './MovieCard'
+import AddNote from "./AddNote";
 
-function TravelList({travel}) {
-
+function TravelList({travel, saveComment}) {
     const showMovies = travel.map((movie) => {
        
         return (
-            <MovieCard 
-                key={movie.id}
-                movie={movie}
-                className="travel-cards"
-            />
+            <div key={movie.id} className="travel-card-container">
+                <MovieCard 
+                    movie={movie}
+                    className="travel-cards"
+                />
+                <AddNote saveComment={saveComment}/>
+            </div>
         )
     })
     return (

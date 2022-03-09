@@ -7,7 +7,6 @@ import MovieList from "./MovieList";
 import "./index.css";
 
 function App() {
-
     const [movies, setMovies] = useState([]);
     const [travel, setTravel] = useState ([]);
 
@@ -15,14 +14,11 @@ function App() {
         fetch('http://localhost:3000/movies')
         .then(resp => resp.json())
         .then(movieData => {
-            console.log(movieData);
             setMovies(movieData);
-            
         })
     }, []);
 
     function handleClickMovie(clickedMovie){
-        console.log(clickedMovie)
         if (!travel.includes(clickedMovie)) {
         setTravel([...travel, clickedMovie]);
         }
@@ -31,10 +27,18 @@ function App() {
     function handleAddMovie (newMovie) {
         setMovies([...movies, newMovie])
     }
-
-
-
-
+   
+    // //PATCH HERE WHEN USER CLICKS SAVE
+    // function saveComment(id) {
+    //     fetch(`http://localhost:3000/movies/${id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({"comment": ''})
+    //     })
+    // }
+    
   return (
       <div className="App">
           <NavBar />
@@ -45,6 +49,7 @@ function App() {
               <Route path="/travellist">
                   <TravelList 
                     travel={travel}
+                    saveComment={saveComment}
                   />
               </Route>
               <Route exact path="/">
