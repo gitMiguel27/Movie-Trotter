@@ -49,7 +49,7 @@ function App() {
               <Route path="/travellist">
                   <TravelList 
                     travel={travel}
-                    saveComment={saveComment}
+                    // saveComment={saveComment}
                   />
               </Route>
               <Route exact path="/">
