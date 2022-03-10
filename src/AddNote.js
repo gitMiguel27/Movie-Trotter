@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 
-function AddNote({ saveComment }) {
-    const [noteText, setNoteText] = useState('');
-    const [textContent, setTextContent] = useState('');
+function AddNote({ handleSaveClick, movie, newComment}) {
+    const [noteText, setNoteText] = useState(movie.comment);
 	const characterLimit = 200;
-
-    // const { id } = travel;
-
-    // function saveClick(event) {
-    //     saveComment(id)
-    // }
 
 	function handleChange(event){
 		if (characterLimit - event.target.value.length >= 0) {
@@ -17,8 +10,8 @@ function AddNote({ saveComment }) {
 		}
 	}
 
-	function handleSaveClick() {
-        setTextContent(noteText);
+	function saveClick() {
+        handleSaveClick(movie, noteText);
 	}
 
     function clickFavorite(event) {
@@ -38,7 +31,7 @@ function AddNote({ saveComment }) {
                     placeholder='Type to add a note...'
                     value={noteText}
                     onChange={handleChange}
-                >{textContent}
+                >{movie.comment}
                 </textarea>
                 <div className="favorite-icon" onClick={clickFavorite}>{"\u2606"}</div>
             </div>
@@ -46,7 +39,7 @@ function AddNote({ saveComment }) {
                 <small>
                     {characterLimit - noteText.length} Remaining
                 </small>
-                <button className='save' onClick={handleSaveClick}>
+                <button className='save' onClick={saveClick}>
                     Save
                 </button>
             </div>

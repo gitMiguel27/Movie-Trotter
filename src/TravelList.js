@@ -2,22 +2,24 @@ import React from "react";
 import MovieCard from './MovieCard'
 import AddNote from "./AddNote";
 
-function TravelList({travel, saveComment}) {
+function TravelList({travel, handleSaveClick, newComment}) {
     const showMovies = travel.map((movie) => {
-       
         return (
             <div key={movie.id} className="travel-card-container">
                 <MovieCard 
                     movie={movie}
                     className="travel-cards"
                 />
-                <AddNote saveComment={saveComment}/>
+                <AddNote handleSaveClick={handleSaveClick} movie={movie} newComment={newComment}/>
             </div>
         )
     })
     return (
-        <div>
-            <h1>Hello From Travel List</h1>
+        <div className="travel-list">
+            <h1 className="travel-list-header">Your Travel Log</h1>
+            <h3 className="travel-list-description">
+                Begin your travel planning now! Don't forget to save your notes... 
+            </h3>
             <div className="travel-container">
                 {showMovies}
             </div>

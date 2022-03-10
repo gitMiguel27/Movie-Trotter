@@ -5,10 +5,14 @@ import AddAMovie from "./AddAMovie";
 import TravelList from "./TravelList";
 import MovieList from "./MovieList";
 import "./index.css";
+import { FcGlobe } from "react-icons/fc";
 
 function App() {
     const [movies, setMovies] = useState([]);
     const [travel, setTravel] = useState ([]);
+    const [newComment, setNewComment] = useState ('');
+
+    
 
     useEffect (() => {
         fetch('http://localhost:3000/movies')
@@ -18,26 +22,31 @@ function App() {
         })
     }, []);
 
-    function handleClickMovie(clickedMovie){
-        if (!travel.includes(clickedMovie)) {
-        setTravel([...travel, clickedMovie]);
-        }
-    }
+
 
     function handleAddMovie (newMovie) {
         setMovies([...movies, newMovie])
     }
    
     // //PATCH HERE WHEN USER CLICKS SAVE
-    // function saveComment(id) {
-    //     fetch(`http://localhost:3000/movies/${id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({"comment": ''})
-    //     })
-    // }
+    function handleSaveClick(updatedMovie, savedComment) {
+        console.log(updatedMovie)
+        fetch(`http://localhost:3000/movies/${updatedMovie.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({"comment": savedComment})
+        })
+                updatedMovie.comment = savedComment;
+                // setNewComment(savedComment)
+    }
+
+    function handleClickMovie(clickedMovie) {
+        if (!travel.includes(clickedMovie)) {
+        setTravel([...travel, clickedMovie]);
+        }
+    }
     
   return (
       <div className="App">
@@ -49,6 +58,8 @@ function App() {
               <Route path="/travellist">
                   <TravelList 
                     travel={travel}
+                    handleSaveClick={handleSaveClick}
+                    newComment={newComment}
                     // saveComment={saveComment}
                   />
               </Route>
@@ -56,9 +67,28 @@ function App() {
                   <MovieList 
                     movies={movies}
                     handleClickMovie={handleClickMovie}
+            
                   />
               </Route>
           </Switch>
+          <div className="footer">
+              
+              <div className="our-logo">
+                  <div className="second-one">
+                 M<FcGlobe size=".75em"/>vie Tr<FcGlobe size=".75em"/>tter
+                 </div>
+              </div>
+              <div>
+                Find us on LinkedIn: 
+                <li className="list-item">
+                    <a href="https://www.linkedin.com/in/bridget-kelly-594009127/" target="_blank"> Bridget Kelly </a>
+                </li>
+                <li className="list-item">
+                    <a href="https://www.linkedin.com/in/miguel-nazario"target="_blank">   Miguel Nazario</a>
+                </li>
+              </div>
+              
+          </div>
       </div>
   );
 }

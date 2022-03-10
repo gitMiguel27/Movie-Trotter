@@ -1,0 +1,6 @@
+TODO
+
+1. things aren't persisting on the travel list in the UI
+   when the movie card is clicked, but it is saving in the DB
+
+2. comments are persisting with the patch 

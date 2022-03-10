@@ -67,11 +67,14 @@ function AddAMovie({ onAddMovie}) {
     }
 
     return (
-        <div>
-        <h1>Add to Movie List</h1>
-        {errorMessage && (
+        <div className="add-a-movie">
+          <h1 className="movie-form-header">Add Your Own Movie/Travel Inspo</h1>
+          <h3 className="movie-form-description">
+            Build your own movie card below! 
+          </h3>
+          {errorMessage && (
             <p className="error"> {errorMessage} </p>
-            )}
+          )}
         <form className="movie-form" onSubmit={handleSubmit}> 
         <label>
           Movie Title:

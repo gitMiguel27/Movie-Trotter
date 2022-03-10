@@ -4,9 +4,16 @@ import { NavLink } from "react-router-dom"
 function NavBar() {
     return (
         <nav className="navbar">
-            <NavLink exact to="/">Movie List</NavLink>
-            <NavLink to="/AddAMovie">Add a Movie</NavLink>
-            <NavLink to="/TravelList">Travel List</NavLink>
+            <div className="navbar-header">
+                {/* <div>
+                    <NavLink exact to="/">Movie Trotter</NavLink>
+                </div> */}
+                <div>
+                    <NavLink activeStyle={{textDecoration:"underline"}} exact to="/">| Movie List |</NavLink>
+                    <NavLink activeStyle={{textDecoration:"underline"}} to="/AddAMovie">| Add a Movie |</NavLink>
+                    <NavLink activeStyle={{textDecoration:"underline"}} to="/TravelList">| Travel Log |</NavLink>
+                </div>
+            </div>
         </nav>
     );
 }

@@ -3,8 +3,27 @@ import React, { useState } from 'react'
 function MovieCard ({movie, handleClickMovie}) {
     // const [className, setClassName] = useState(false);
 
+
+
     function clickMovie(){
         handleClickMovie(movie);
+        // if (!travel.includes(clickedMovie)) {
+        //     fetch('http://localhost:3000/travel', {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({
+        //     name: clickedMovie.name,
+        //     image: clickedMovie.image,
+        //     location: clickedMovie.location,
+        //     comment: clickedMovie.comment
+        //   }),
+        // })
+        // // .then(resp => resp.json())
+        // // .then((addedTravel) => onHandlePost(addedTravel))       
+        // }
+        //     setTravel([...travel, clickedMovie]);
     }
 
     return (
