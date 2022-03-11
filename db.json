@@ -6,14 +6,14 @@
       "name": "Harry Potter",
       "image": "https://live.staticflickr.com/65535/33844030118_b0b4bf3407_o.jpg",
       "location": "Oxford University in England",
-      "comment": ""
+      "comment": "Ask my friend if he wants to go with me here"
     },
     {
       "id": 2,
       "name": "La La Land",
       "image": "https://i.guim.co.uk/img/media/9319be74e9e134ee1f53c0ef137d3051d3d7c928/0_0_5582_3725/master/5582.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=1013f4dc74a0f3ddc86af18b22a5c5ba",
       "location": "Griffith Observatory in Los Angeles",
-      "comment": ""
+      "comment": "Need to go here! kfj,bfdsjkbvjkbsjvbbvdfvegvregergergvergjvhwukhgfuhrwukfhjlewbnfljnwjrlnfgjkrjkgjkrebgjkbrwjkbgjkrwbfjkbewjfbwjkebfjkwbefjkbewjkfbejkwbfjkebfjkbejkbfjkewbfjkebjkfbejkbfjkebfjkbejfbjke"
     },
     {
       "id": 3,
@@ -98,6 +98,18 @@
       "image": "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.visitphilly.com%2Fwp-content%2Fuploads%2F2019%2F03%2Fphiladelphia-museum-of-art-exterior-clear-sky-jfusco-for-vp-2200x1237px.jpg",
       "location": "Philadelphia Muuseum of Art in Philadelphia, Pennsylvania",
       "comment": ""
+    },
+    {
+      "name": "Luca",
+      "image": "https://live-production.wcms.abc-cdn.net.au/244077b66308d583d98f583880b59976?impolicy=wcms_crop_resize&cropH=2848&cropW=4272&xPos=0&yPos=0&width=862&height=575",
+      "location": "PortoRosso",
+      "id": 15
+    },
+    {
+      "name": "La La land",
+      "image": "https://i.guim.co.uk/img/media/20ec1549268ad93c2bad74e65ce746433d7c7b2a/0_212_3324_1994/master/3324.jpg?width=700&quality=85&auto=format&fit=max&s=bb704ab944255d64fa7373bd39045e5f",
+      "location": "Los Angeles",
+      "id": 16
     }
   ]
 }
