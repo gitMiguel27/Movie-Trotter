@@ -13,7 +13,6 @@ function AddAMovie({ onAddMovie}) {
             ...formData,
             [event.target.name]: event.target.value,
         });
-        // console.log(formData.name)
     }
   
     function handleSubmit(event) {
@@ -61,7 +60,6 @@ function AddAMovie({ onAddMovie}) {
             image: "",
             location: ""
         })
-          // setErrorMessage(null)
         alert("Added to movie list");
       }
     }
@@ -76,7 +74,7 @@ function AddAMovie({ onAddMovie}) {
             <p className="error"> {errorMessage} </p>
           )}
         <form className="movie-form" onSubmit={handleSubmit}> 
-        <label>
+        <label className="form-labels">
           Movie Title:
           <input
             className="capitalize"
@@ -87,7 +85,7 @@ function AddAMovie({ onAddMovie}) {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="form-labels">
           Location Image:
           <input
             className="capitalize"
@@ -98,7 +96,7 @@ function AddAMovie({ onAddMovie}) {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="form-labels">
           Movie Location:
           <input
             className="capitalize"
